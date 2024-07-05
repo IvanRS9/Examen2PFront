@@ -1,0 +1,30 @@
+.logo-nav{
+  width: 35px !important;
+  height: 35px !important;
+}
+
+.master-text{
+  color: #ffceeb;
+}
+
+.race-text{
+  color: #ffade9;
+}
+
+.gaming-text{
+  color: #ef70fa;
+}
+
+.slider{
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.h-90{
+  height: 90vh !important;
+}
+
+.menu-h-li{
+  font-size: 20px !important;
+  color: #fff !important
+}
