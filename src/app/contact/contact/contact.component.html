@@ -1,0 +1,73 @@
+<div class="container mx-auto my-10 p-5">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center">
+    <!-- Formulario de contacto -->
+    <div class="card w-full bg-gray-700 p-6 rounded-lg shadow-lg">
+      <h2
+        class="text-3xl font-semibold race-text mb-6 text-center">Contáctanos</h2>
+      <form>
+        <div class="mb-4">
+          <label class="block text-white font-semibold mb-2"
+            for="nombre">Nombre</label>
+          <input type="text" id="nombre" class="input input-bordered w-full"
+            placeholder="Tu nombre">
+        </div>
+        <div class="mb-4">
+          <label class="block text-white font-semibold mb-2"
+            for="apellido">Apellido</label>
+          <input type="text" id="apellido" class="input input-bordered w-full"
+            placeholder="Tu apellido">
+        </div>
+        <div class="mb-4">
+          <label class="block text-white font-semibold mb-2"
+            for="asunto">Asunto</label>
+          <input type="text" id="asunto" class="input input-bordered w-full"
+            placeholder="Asunto del mensaje">
+        </div>
+        <div class="mb-4">
+          <label class="block text-white font-semibold mb-2"
+            for="email">Email</label>
+          <input type="email" id="email" class="input input-bordered w-full"
+            placeholder="Tu email">
+        </div>
+        <div class="mb-4">
+          <label class="block text-white font-semibold mb-2"
+            for="mensaje">Mensaje</label>
+          <textarea id="mensaje" class="textarea textarea-bordered w-full"
+            rows="5" placeholder="Escribe tu mensaje"></textarea>
+        </div>
+        <div class="text-center">
+          <a href="/home">
+            <button type="button" class="btn btn-outline btn-secondary">
+              Enviar
+              Correo
+            </button>
+          </a>
+        </div>
+      </form>
+    </div>
+
+    <!-- Información de oficinas -->
+    <div class="card w-full bg-gray-700 p-6 rounded-lg shadow-lg">
+      <h2
+        class="text-3xl font-semibold mb-6 gaming-text text-center">Oficinas</h2>
+      <div class="text-lg text-white">
+        <p class="mb-4"><span class="font-semibold">Ubicación:</span> Salem,
+          Massachusetts</p>
+        <div class="mb-4">
+          <iframe
+            width="100%"
+            height="200"
+            frameborder="0"
+            style="border:0"
+            src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=Salem,Massachusetts"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="mb-4"><span class="font-semibold">Teléfono:</span> (555)
+          123-4567</p>
+        <p class="mb-4"><span class="font-semibold">Email:</span>
+          info&#64;mrg.com</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,59 @@
-<p>products works!</p>
+<div class="flex justify-center space-x-4 mt-4">
+  <button class="btn btn-outline" (click)="obtenerProductos()">
+    Todos los productos
+  </button>
+  <button class="btn btn-outline btn-primary"
+    (click)="obtenerProductosPorCategoria(1)">
+    Gama Baja
+  </button>
+  <button class="btn btn-outline btn-accent"
+    (click)="obtenerProductosPorCategoria(2)">
+    Gama Media Baja
+  </button>
+  <button class="btn btn-outline btn-secondary"
+    (click)="obtenerProductosPorCategoria(3)">
+    Gama Media
+  </button>
+  <button class="btn btn-outline btn-success"
+    (click)="obtenerProductosPorCategoria(4)">
+    Gama Media Alta
+  </button>
+  <button class="btn btn-outline btn-warning"
+    (click)="obtenerProductosPorCategoria(5)">
+    Gama Alta
+  </button>
+</div>
+<div class="text-center mt-6 mb-6 text-xl">
+  <br>
+  <span class="master-text">Enjoy</span>&nbsp;<span
+    class="race-text">The</span>&nbsp;<span class="gaming-text">Race</span>
+  <br>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-5">
+  <h1 *ngIf="!isResultadosLoaded" class="text-center text-4xl"><span
+      class="loading loading-ring loading-lg"></span></h1>
+  <div
+    class="card card-compact border border-indigo-300 bg-base-100 w-full shadow-xl"
+    *ngFor="let product of listarProductos">
+    <figure>
+      <img src="../../../assets/image/pc/{{product.image}}"
+        alt="{{ product.name }}" />
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title master-text">{{ product.name }}</h2>
+      <p class="font-semibold text-white">{{ product.description }}</p>
+      <br>
+      <p class="text-xl gaming-text">Componentes:</p>
+      <ul class="list-disc mx-4">
+        <li *ngFor="let component of product.components.split(',')">
+          {{ component }}
+        </li>
+      </ul>
+      <br>
+      <div class="card-actions justify-end">
+        <button class="btn btn-primary">Solicitar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<br>

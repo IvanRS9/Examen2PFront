@@ -28,3 +28,28 @@
   font-size: 20px !important;
   color: #fff !important
 }
+
+.bg-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../image/game-controller.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5; /* Ajusta este valor según tus necesidades */
+  z-index: 0;
+}
+
+.bg-img .card-content {
+  position: relative;
+  z-index: 1;
+}
+
