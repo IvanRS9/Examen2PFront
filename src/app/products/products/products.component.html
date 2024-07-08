@@ -1,4 +1,10 @@
 <div class="flex justify-center space-x-4 mt-4">
+  <input
+    type="text"
+    placeholder="Buscar productos..."
+    class="input input-bordered w-full max-w-xs"
+    [(ngModel)]="searchTerm"
+    (input)="filterProducts()" />
   <button class="btn btn-outline" (click)="obtenerProductos()">
     Todos los productos
   </button>
@@ -29,12 +35,12 @@
     class="race-text">The</span>&nbsp;<span class="gaming-text">Race</span>
   <br>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-5">
+<div class="px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-5">
   <h1 *ngIf="!isResultadosLoaded" class="text-center text-4xl"><span
       class="loading loading-ring loading-lg"></span></h1>
   <div
     class="card card-compact border border-indigo-300 bg-base-100 w-full shadow-xl"
-    *ngFor="let product of listarProductos">
+    *ngFor="let product of filteredProducts">
     <figure>
       <img src="../../../assets/image/pc/{{product.image}}"
         alt="{{ product.name }}" />

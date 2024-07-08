@@ -9,7 +9,9 @@ import { IProducts } from '../interfaces/products';
 })
 export class ProductsComponent {
   listarProductos: IProducts[] = [];
+  filteredProducts: IProducts[] = [];
   isResultadosLoaded = false;
+  searchTerm: string = '';
 
   constructor(private _productService: ProductsService) {
     this.obtenerProductos();
@@ -19,6 +21,7 @@ export class ProductsComponent {
     this._productService.getProducts().subscribe({
       next: (products) => {
         this.listarProductos = products;
+        this.filteredProducts = products;
         this.isResultadosLoaded = true;
       }, error: (e) => { console.log(e) }
     });
@@ -29,9 +32,16 @@ export class ProductsComponent {
       next: (products) => {
         console.log(products); // Verificar que los productos filtrados se están obteniendo
         this.listarProductos = products;
+        this.filterProducts();
         this.isResultadosLoaded = true;
       },
       error: (e) => { console.log(e); }
     });
+  }
+
+  filterProducts(): void {
+    this.filteredProducts = this.listarProductos.filter(product =>
+      product.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
   }
 }

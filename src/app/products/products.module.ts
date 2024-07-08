@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductsComponent } from './products/products.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { ProductsService } from './products.service';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -12,7 +13,7 @@ import { ProductsService } from './products.service';
     ProductsComponent
   ],
   imports: [
-    CommonModule, HttpClientModule, NgFor
+    CommonModule, HttpClientModule, NgFor, FormsModule
   ],
   exports: [
     ProductsComponent
